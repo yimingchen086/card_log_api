@@ -1,14 +1,18 @@
-from .card_info_schema import CardInfoSchema
-from .card_info_update_schema import CardInfoUpdateSchema
-from .card_info_create_schema import CardInfoCreateSchema
-# from .consumption_create_schema import ConsumptionCreateSchema
+from .credit_card_schema import CreditCardSchema
+from .transaction_create_schema import TransactionCreateSchema
+from .transaction_schema import TransactionSchema
+from .transaction_update_schema import TransactionUpdateSchema
+from .transaction_method_schema import TransactionMethodSchema
+from .category_schema import CategorySchema
 
 SCHEMA_CATEGORIES = {
-    "cards": ["CardInfoSchema", "CardInfoUpdateSchema", "CardInfoCreateSchema"],
-    # "consumption": ["ConsumptionCreateSchema"]
+    "credit_card": ["CreditCardSchema"],
+    "transaction": ["TransactionCreateSchema", "TransactionSchema", "TransactionUpdateSchema"],
+    "category": ["CategorySchema"]
 }
 
 __all__ = [
-    *SCHEMA_CATEGORIES["cards"],
-    # *SCHEMA_CATEGORIES["consumption"]
+    *SCHEMA_CATEGORIES["credit_card"],
+    *SCHEMA_CATEGORIES["transaction"],
+    *SCHEMA_CATEGORIES["category"]
 ]
